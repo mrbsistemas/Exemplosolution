@@ -11,9 +11,10 @@ using System;
 namespace ExemploSolution.Infrastructure.Migrations
 {
     [DbContext(typeof(AplicationDBCotnext))]
-    partial class AplicationDBCotnextModelSnapshot : ModelSnapshot
+    [Migration("20180828171042_AdicionaClasseContato")]
+    partial class AdicionaClasseContato
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,18 +26,13 @@ namespace ExemploSolution.Infrastructure.Migrations
                     b.Property<int>("ClienteId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Cpf")
-                        .IsRequired()
-                        .HasColumnType("varchar(11)");
+                    b.Property<string>("Cpf");
 
                     b.Property<DateTime>("DataCadastro");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
+                    b.Property<string>("Nome");
 
-                    b.Property<string>("Telefone")
-                        .HasColumnType("varchar(20)");
+                    b.Property<string>("Telefone");
 
                     b.HasKey("ClienteId");
 
@@ -50,16 +46,11 @@ namespace ExemploSolution.Infrastructure.Migrations
 
                     b.Property<int>("ClienteId");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<string>("Email");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
+                    b.Property<string>("Nome");
 
-                    b.Property<string>("Telefone")
-                        .HasColumnType("varchar(15)");
+                    b.Property<string>("Telefone");
 
                     b.HasKey("ContatoId");
 

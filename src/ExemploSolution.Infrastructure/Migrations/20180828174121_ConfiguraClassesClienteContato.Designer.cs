@@ -11,9 +11,10 @@ using System;
 namespace ExemploSolution.Infrastructure.Migrations
 {
     [DbContext(typeof(AplicationDBCotnext))]
-    partial class AplicationDBCotnextModelSnapshot : ModelSnapshot
+    [Migration("20180828174121_ConfiguraClassesClienteContato")]
+    partial class ConfiguraClassesClienteContato
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,8 +36,7 @@ namespace ExemploSolution.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(200)");
 
-                    b.Property<string>("Telefone")
-                        .HasColumnType("varchar(20)");
+                    b.Property<string>("Telefone");
 
                     b.HasKey("ClienteId");
 

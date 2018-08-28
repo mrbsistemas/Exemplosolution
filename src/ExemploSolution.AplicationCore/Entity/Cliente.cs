@@ -17,6 +17,8 @@ namespace ExemploSolution.AplicationCore.Entity
         public string Cpf { get; set; }
         public DateTime DataCadastro { get; set; }
         public  string Telefone { get; set; }
+        public ICollection<Contato> Contatos { get; set; }
+
 
     }
 
