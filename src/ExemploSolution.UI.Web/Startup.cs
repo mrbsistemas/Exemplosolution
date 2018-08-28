@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ExemploSolution.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -32,7 +33,8 @@ namespace ExemploSolution.UI.Web
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
+            services.AddDbContext<AplicationDBCotnext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
